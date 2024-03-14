@@ -1,18 +1,12 @@
 import express from 'express';
 import http from 'node:http';
-import { createBareServer } from "@tomphttp/bare-server-node";
-import wisp from "wisp-server-node";
 import cors from 'cors';
-import path from "path";
 import { hostname } from "node:os"
-import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
-import { baremuxPath } from "@mercuryworkshop/bare-mux";
 
 const server = http.createServer();
 const app = express(server);
-const __dirname = process.cwd();
-const bareServer = createBareServer('/bare/');
-const PORT = 8080;
+const __dirname = process.cwd()
+const PORT = 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
